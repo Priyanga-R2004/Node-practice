@@ -10,8 +10,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "joi": "^13.1.0",
     "mongoose": "^8.7.2",
+    "morgan": "^1.10.0",
     "underscore": "^1.13.7"
   }
 }
