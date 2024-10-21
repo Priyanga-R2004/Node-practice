@@ -1,14 +1,26 @@
+const config=require('config');
+
 const express=require('express');
 const app = express();
 const logger=require('./logger');
 const Joi=require('joi');
 const helmet = require('helmet');
 const morgan=require('morgan');
+
+app.set('view enging','pug');
+app.set('views','./views'); //default
+
 /*
 //to check the environment
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 console.log(`APP: ${app.get('env')}`);
 */
+
+
+//Configuration
+console.log('Application name :'+config.get('name') );
+console.log('Mail Server :'+config.get('mail.host') );
+console.log('Mail password :'+config.get('mail.password') );
 const courses = [
     
     {id:1,name:'c1',},
