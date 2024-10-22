@@ -32,20 +32,21 @@ mongoose.connect('mongodb://localhost/playground')
  //To get document for db
 
  
-  function getCourses(){
-    const courses=  Course
+ async  function getCourses(){
+    const courses= await Course
         .find({author:'Mosh'})
         .limit(10)
         .sort({name:1})
         .select({name:1,tags:1});
-   //const arr=['a1','a2'];
+  
     return courses;
  }
 
 
  //createCourse();
-var c=getCourses();
-console.log(c);
+ getCourses();
+/*var c=getCourses();
+console.log(c);*/
 
 
 
