@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "config": "^3.3.12",
     "express": "^4.21.1",
     "fawn": "^2.1.5",
     "joi": "^17.13.3",
