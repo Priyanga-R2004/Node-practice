@@ -3,15 +3,17 @@ const admin = require('../middleware/admin');
 const {Genre, validate} = require('../models/genre');
 const mongoose = require('mongoose');
 const express = require('express');
+//const  asyncMiddleware=require('../middleware/async')
 const router = express.Router();
 
 
-router.get('/', async (req, res) => {
-  
+
+router.get('/', (async (req, res) => {
+  //throw new Error('could not get to genre');
   const genres = await Genre.find().sort('name');
   res.send(genres);
-  
-});
+ 
+}));
 
 router.post('/', auth, async (req, res) => {
   const { error } = validate(req.body); 
